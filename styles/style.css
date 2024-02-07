@@ -36,3 +36,96 @@ ul,
 ol {
   list-style: none;
 }
+
+.page {
+  width: 1140px;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Основа */
+.content {
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: 711px 399px;
+  grid-template-rows: 534px;
+  /* overflow: hidden; */
+  margin-top: 133px;
+  margin-bottom: 133px;
+}
+
+.result {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  align-self: center;
+}
+
+.result__video {
+  width: 100%;
+}
+
+.search-form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* ВТорая половина */
+.content__details {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 250px 250px;
+  width: 100%;
+  /* overflow: hidden; */
+  /* grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2; */
+  grid-row-start: 1;
+  grid-row-end: 3;
+  max-height: 100%;
+  grid-column-start: 2;
+  grid-column-end: 3; 
+}
+
+.title {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  align-self: end;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.content__list {
+  width: 100%;
+  /* overflow: scroll;
+  grid-row-end: 2; */
+  overflow: scroll;
+  height: 100%;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+}
+
+.content__list-item {
+  width: 100%;
+}
+
+.content__video-card-thumbnail {
+  width: 50%;
+}
+
+.content__video-card-description-container {
+  width: 50%;
+}
+
+
+
+.content__video-card {
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+}
