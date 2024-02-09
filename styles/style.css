@@ -37,6 +37,16 @@ ol {
   list-style: none;
 }
 
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+} 
+
 .page {
   width: 1140px;
   height: 800px;
@@ -58,17 +68,43 @@ ol {
 .result {
   grid-row-start: 1;
   grid-row-end: 3;
-  align-self: center;
+  align-self: end;
 }
 
 .result__video {
-  width: 100%;
+  /* max-width: 711px;
+  max-height: 386px; */
+  width: 711px;
+  height: 386px;
+}
+
+.result__video-container {
+  position: relative;
 }
 
 .search-form {
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+
+fieldset {
+  border: none;
+}
+
+.search-form__label {
+  display: flex;
+  width: fit-content;
+}
+
+.search-form__textfield {
+  cursor: pointer;
+  appearance: none;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px
 }
 
 /* ВТорая половина */
@@ -93,6 +129,14 @@ ol {
   grid-row-start: 1;
   grid-row-end: 2;
   align-self: end;
+  font-size: 75px;
+  text-transform: uppercase;
+  line-height: 94%;
+  font-family: OSWALD;
+}
+
+.content__accent {
+  color: #545050;
 }
 
 .content__list-item:not(:last-child) {
@@ -103,7 +147,7 @@ ol {
   width: 100%;
   /* overflow: scroll;
   grid-row-end: 2; */
-  overflow: scroll;
+  overflow-y: scroll;
   height: 100%;
   grid-row-start: 2;
   grid-row-end: 3;
@@ -115,17 +159,50 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  width: 50%;
+  max-width: 50%;
+}
+
+.content__card-link {
+  text-decoration: none;
 }
 
 .content__video-card-description-container {
   width: 50%;
+  color: #fff;
 }
-
-
 
 .content__video-card {
   /* width: 100%; */
   display: flex;
   justify-content: space-between;
+}
+
+.content__video-card-title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 100%;
+}
+
+.content__video-card-description {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 90%;
+  
+}
+
+.content__list {
+  position: relative;
+}
+
+.content__list > li:last-child {
+  position: sticky;
+  bottom: 0;
+}
+
+.more-button {
+  /* position: sticky; */
+  
+  /* left: 0; */
+  width: 100%;
 }
