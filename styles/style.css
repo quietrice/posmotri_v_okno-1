@@ -54,6 +54,20 @@ ol {
   justify-content: center;
 }
 
+.button {
+  min-height: 34px;
+  border: 1px solid #fff;
+  /* background-color: ; */
+  /* opacity: 0; */
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  background-color: #1b1919
+  ;
+}
+
 /* Основа */
 .content {
   display: grid;
@@ -66,6 +80,9 @@ ol {
 }
 
 .result {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   grid-row-start: 1;
   grid-row-end: 3;
   align-self: end;
@@ -86,6 +103,7 @@ ol {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 fieldset {
@@ -97,9 +115,25 @@ fieldset {
   width: fit-content;
 }
 
+.search-form__fieldset {
+  
+}
+
 .search-form__textfield {
   cursor: pointer;
   appearance: none;
+  background-color: transparent;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  font-family: inherit;
+  min-width: 225px;
+  height: 27px;
+  /* color: inherit; */
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .search-form__checkbox-list {
@@ -107,11 +141,16 @@ fieldset {
   gap: 15px
 }
 
+.search-form__submit-button {
+  min-width: 194px;
+}
+
 /* ВТорая половина */
 .content__details {
+  align-self: end;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 250px 250px;
+  grid-template-rows: 250px 298px;
   width: 100%;
   /* overflow: hidden; */
   /* grid-column-start: 2;
@@ -123,6 +162,7 @@ fieldset {
   max-height: 100%;
   grid-column-start: 2;
   grid-column-end: 3; 
+  gap: 26px;
 }
 
 .title {
@@ -205,4 +245,5 @@ fieldset {
   
   /* left: 0; */
   width: 100%;
+  
 }
