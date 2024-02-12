@@ -64,8 +64,7 @@ ol {
   font-size: 18px;
   text-align: center;
   color: #fff;
-  background-color: #1b1919
-  ;
+  background-color: #1b1919;
 }
 
 /* Основа */
@@ -73,7 +72,7 @@ ol {
   display: grid;
   column-gap: 30px;
   grid-template-columns: 711px 399px;
-  grid-template-rows: 534px;
+  grid-template-rows: 1fr;
   /* overflow: hidden; */
   margin-top: 133px;
   margin-bottom: 133px;
@@ -82,7 +81,7 @@ ol {
 .result {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 13px;
   grid-row-start: 1;
   grid-row-end: 3;
   align-self: end;
@@ -92,7 +91,7 @@ ol {
   /* max-width: 711px;
   max-height: 386px; */
   width: 711px;
-  height: 386px;
+  height: 100%;
 }
 
 .result__video-container {
@@ -116,9 +115,19 @@ fieldset {
 }
 
 .search-form__fieldset {
-  
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-self: start;
 }
 
+.search-form__fieldset-title {
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Текстовое поле */
 .search-form__textfield {
   cursor: pointer;
   appearance: none;
@@ -136,6 +145,33 @@ fieldset {
   color: rgba(255, 255, 255, 0.7);
 }
 
+
+/* Не пон Шаг 6 */
+
+/* .search-form__textfield:focus {
+  outline: none;
+} */
+
+/* .search-form__textfield:has(:focus-visible){
+  outline: 20px solid aqua;
+} */
+
+
+
+.search-form__label:has(:focus-visible) {
+  outline: 10px solid aqua;
+}
+
+/* .search-form__label:focus {
+  outline: none;
+} */
+
+.search-form__textfield:focus {
+  outline: none;
+} 
+
+
+
 .search-form__checkbox-list {
   display: flex;
   gap: 15px
@@ -145,12 +181,44 @@ fieldset {
   min-width: 194px;
 }
 
+.search-form__pseudo-checkbox {
+  width:18px;
+  height: 18px;
+  background-color: transparent; 
+  border: solid 1px #fff;
+  margin-right: 5px;
+  align-self: center;
+  
+}
+
+/* input[type='checkbox']:checked + span{
+  border: 1px solid #000;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  box-shadow: 0 0 0 1px #fff ;
+  
+} */
+
+/* .search-form__pseudo-checkbox[type='checkbox']::after:active */
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  display: block;
+  position: relative;
+  content: "";
+  width: 15px;
+  height: 15px;
+  top: 1px;
+  left: 1px;
+  background-color: #fff;
+}
+
 /* ВТорая половина */
 .content__details {
   align-self: end;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 250px 298px;
+  grid-template-rows: 1fr auto;
   width: 100%;
   /* overflow: hidden; */
   /* grid-column-start: 2;
@@ -191,7 +259,6 @@ fieldset {
   height: 100%;
   grid-row-start: 2;
   grid-row-end: 3;
-
 }
 
 .content__list-item {
@@ -235,7 +302,7 @@ fieldset {
   position: relative;
 }
 
-.content__list > li:last-child {
+.content__list > li:last-child:not(.content__list-item) {
   position: sticky;
   bottom: 0;
 }
