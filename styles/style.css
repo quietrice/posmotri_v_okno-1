@@ -57,8 +57,6 @@ ol {
 .button {
   min-height: 34px;
   border: 1px solid #fff;
-  /* background-color: ; */
-  /* opacity: 0; */
   font-family: inherit;
   font-weight: 700;
   font-size: 18px;
@@ -67,13 +65,20 @@ ol {
   background-color: #1b1919;
 }
 
+.button:hover {
+  text-decoration: underline;
+}
+
+.button:active {
+  background-color: #545050;
+}
+
 /* Основа */
 .content {
   display: grid;
   column-gap: 30px;
   grid-template-columns: 711px 399px;
   grid-template-rows: 1fr;
-  /* overflow: hidden; */
   margin-top: 133px;
   margin-bottom: 133px;
 }
@@ -88,8 +93,6 @@ ol {
 }
 
 .result__video {
-  /* max-width: 711px;
-  max-height: 386px; */
   width: 711px;
   height: 100%;
 }
@@ -109,9 +112,18 @@ fieldset {
   border: none;
 }
 
+/* Чек Боксы */
 .search-form__label {
   display: flex;
   width: fit-content;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 10px solid aqua;
+}
+
+.search-form__label:has(.search-form__checkbox):hover {
+  text-decoration: underline;
 }
 
 .search-form__fieldset {
@@ -139,7 +151,6 @@ fieldset {
   font-family: inherit;
   min-width: 225px;
   height: 27px;
-  /* color: inherit; */
   font-weight: 400;
   font-size: 18px;
   color: rgba(255, 255, 255, 0.7);
@@ -150,6 +161,7 @@ fieldset {
 
 /* .search-form__textfield:focus {
   outline: none;
+  border: none;
 } */
 
 /* .search-form__textfield:has(:focus-visible){
@@ -159,18 +171,21 @@ fieldset {
 
 
 .search-form__label:has(:focus-visible) {
-  outline: 10px solid aqua;
+  outline: 1px solid white;
 }
 
-/* .search-form__label:focus {
+.search-form__label:focus {
   outline: none;
-} */
+  border: none;
+}
 
 .search-form__textfield:focus {
   outline: none;
 } 
 
-
+.search-form__label:has(.search-form__textfield):active {
+  border: 1px solid #fff;
+}
 
 .search-form__checkbox-list {
   display: flex;
@@ -191,17 +206,6 @@ fieldset {
   
 }
 
-/* input[type='checkbox']:checked + span{
-  border: 1px solid #000;
-  width: 16px;
-  height: 16px;
-  background-color: #fff;
-  box-shadow: 0 0 0 1px #fff ;
-  
-} */
-
-/* .search-form__pseudo-checkbox[type='checkbox']::after:active */
-
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   display: block;
   position: relative;
@@ -215,16 +219,10 @@ fieldset {
 
 /* ВТорая половина */
 .content__details {
-  align-self: end;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr auto;
   width: 100%;
-  /* overflow: hidden; */
-  /* grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2; */
   grid-row-start: 1;
   grid-row-end: 3;
   max-height: 100%;
@@ -236,7 +234,7 @@ fieldset {
 .title {
   grid-row-start: 1;
   grid-row-end: 2;
-  align-self: end;
+  align-self: flex-start;
   font-size: 75px;
   text-transform: uppercase;
   line-height: 94%;
@@ -253,8 +251,6 @@ fieldset {
 
 .content__list {
   width: 100%;
-  /* overflow: scroll;
-  grid-row-end: 2; */
   overflow-y: scroll;
   height: 100%;
   grid-row-start: 2;
@@ -267,10 +263,19 @@ fieldset {
 
 .content__video-card-thumbnail {
   max-width: 50%;
+  max-height: 103px;
+  padding-top: 2px;
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
+  height: 107px;
+  margin: 1px;
+}
+
+.content__card-link_current {
+  background-color: #545050;
 }
 
 .content__video-card-description-container {
@@ -279,10 +284,35 @@ fieldset {
 }
 
 .content__video-card {
-  /* width: 100%; */
   display: flex;
   justify-content: space-between;
 }
+
+.content__video-card:hover {
+  text-decoration: underline;
+  color: white;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: none;
+}
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+/* Оутлайн для пунктов видео */
+/* .content__list-item:has(:focus-visible) {
+  outline: 10px solid aqua;
+  outline-offset: 3px;
+} */
+
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link_current:focus {
+  outline: none;
+}
+
 
 .content__video-card-title {
   text-transform: uppercase;
@@ -308,9 +338,5 @@ fieldset {
 }
 
 .more-button {
-  /* position: sticky; */
-  
-  /* left: 0; */
   width: 100%;
-  
 }
