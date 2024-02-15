@@ -1,0 +1,29 @@
+{
+  "name": "posmotri_v_okno-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "check": "prettier --check './**/*.{html,css,js}'",
+    "format": "prettier --write './**/*.{html,css,js}'",
+    "lint": "stylelint '**/*.css'",
+    "lintfix": "stylelint '**/*.css' --fix",
+    "checkAll": "npm run check && npm run lint",
+    "fixAll": "npm run format && npm run lintfix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quietrice/posmotri_v_okno-1.git"
+  },
+  "author": "Andrey Shin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quietrice/posmotri_v_okno-1/issues"
+  },
+  "homepage": "https://github.com/quietrice/posmotri_v_okno-1#readme",
+  "dependencies": {
+    "prettier": "^3.2.5",
+    "stylelint": "^16.2.1"
+  }
+}
